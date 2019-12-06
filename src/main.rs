@@ -1,6 +1,22 @@
 use std::error;
+use std::fmt;
 
 type Result<T> = std::result::Result<T, Box<dyn error::Error>>;
+
+#[derive(Debug)]
+pub enum Error {
+    ValueError, 
+}
+
+impl error::Error for Error { }
+
+impl fmt::Display for Error {
+    fn fmt (&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        match *self {
+            Error::ValueError => write!(f, "Value given is not valid."), 
+        }
+    }
+}
 
 pub mod day1;
 
