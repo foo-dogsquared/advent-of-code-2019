@@ -1,8 +1,10 @@
 use std::error;
 
-use day1;
+type Result<T> = std::result::Result<T, Box<dyn error::Error>>;
 
-fn main() -> Result<(), Box<dyn error::Error>>  {
+pub mod day1;
+
+fn main() -> Result<()>  {
     println!("Hello, world!");
 
     // day 1 solutions
@@ -12,6 +14,6 @@ fn main() -> Result<(), Box<dyn error::Error>>  {
     let total_fuel = day1::part2::main()?;
     println!("The total fuel requirement (considering the inner fuel requirements) for the rocket is {}", total_fuel);
 
-    // day 2 solutions
+    // day 2 solutions    
     Ok(())
 }
