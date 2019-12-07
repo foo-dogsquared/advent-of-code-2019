@@ -1,0 +1,41 @@
+= Advent of Code 2019 
+
+My solutions to the 2019 edition of Advent of Code season. 
+
+The language of choice is https://www.rust-lang.org/[Rust] for practicing purposes. 
+
+The setup of this project should be simple and intuitive enough. 
+Though I have to explain why the project is set up as it is. 
+
+The project is set up using https://github.com/rust-lang/cargo[Cargo], the Rust package manager. 
+
+Each day is its own module and it is included as a part of the project. 
+Each individual part is its own module. 
+
+So for example, at day 1 where it has 2 parts, it would look like this: 
+
+----
+src/day1
+├── mod.rs
+├── part1.rs
+└── part2.rs
+----
+
+The `mod.rs` is simply the code that imports the submodules. 
+Although it can also contain some helper functions specific to that day. 
+
+Each part module has a `main` function for most of the time. 
+This is where the instructions from the challenge is explicitly done. 
+The rest of the code are most likely data structures and their methods. 
+It may also have my comment at the very beginning of the module just for something to look forward to when revisiting my experiences in the future. :) 
+
+Each part also has some tests mainly derived from the examples. 
+It does help me maintain a habit of making tests for my programs. 
+
+The inputs is stored in its own folder at `input/` in the package root folder named as `day$NUMBER` where `$NUMBER` is simply the day number. 
+
+It is structured that way so that I can https://github.com/rust-lang/rls-vscode/[debug it easily and properly] with https://code.visualstudio.com/[Visual Studio Code]. 
+(I'm quite new to Rust and setting up debuggers overall so...)
+
+Also, please keep in mind the code is of low quality. 
+I may or may not spend more time optimizing the code. 
